@@ -16,7 +16,7 @@ public class Pizza {
         if(isVeg){
             price = 300;
 
-            bill="base price "+price;
+            bill="base price "+price+"\n";
         }else {
             price = 400;
         }
