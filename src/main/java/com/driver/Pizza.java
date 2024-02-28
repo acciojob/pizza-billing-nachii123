@@ -127,10 +127,12 @@ public class Pizza {
 
         public void addTakeaway(){
         // your code goes here
-        if(extrtakeway==false) {
+            if(isVeg == true){
+        if(extrtakeway==false ) {
             bill =bill+"Paperbag Added: "+20+"\n";
             price += 20;
         }
+            }
         extrtakeway = true;
     }
 
