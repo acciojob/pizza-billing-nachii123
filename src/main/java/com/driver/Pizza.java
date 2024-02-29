@@ -89,11 +89,13 @@ public class Pizza {
         this.isVeg = isVeg;
         // your code goes here
         if (isVeg) {
-            price = 300;
-            bill = "Base Price Of The Pizza: " + price + "\n";
+            this.price = 300;
+            this.bill = "Base Price Of The Pizza: " + price + "\n";
+//            System.out.println("Base Price Of The Pizza: "+price);
         } else {
-            price = 400;
-            bill = "Base Price Of The Pizza: " + price + "\n";
+            this.price = 400;
+            this.bill = "Base Price Of The Pizza: " + price + "\n";
+//            System.out.println("Base Price Of The Pizza: "+price);
         }
     }
 
@@ -104,8 +106,9 @@ public class Pizza {
     public void addExtraCheese() {
         if (extracheese == false) {
             // your code goes here
-            bill = bill + "Extra Cheese Added: " + 80 + "\n";
-            price += 80;
+            this.bill = bill + "Extra Cheese Added: " + 80 + "\n";
+//            System.out.println("Extra Cheese Added: "+80);
+            this.price += 80;
         }
         extracheese = true;
     }
@@ -114,11 +117,14 @@ public class Pizza {
         // your code goes here
         if (extratopping == false) {
             if (isVeg) {
-                bill = bill + "Extra Toppings Added: " + 70 + "\n";
+                this.bill = bill + "Extra Toppings Added: " + 70 + "\n";
+//                System.out.println("Extra Topping Added: "+70);
+
                 price += 70;
             } else {
-                bill = bill + "Extra Toppings Added: " + 120 + "\n";
-                price += 120;
+                this.bill = bill + "Extra Toppings Added: " + 120 + "\n";
+//                System.out.println("Extra Topping Added: "+120);
+                this.price += 120;
             }
         }
         extratopping = true;
@@ -129,21 +135,29 @@ public class Pizza {
         // your code goes here
             if(isVeg == true){
         if(extrtakeway==false ) {
-            bill =bill+"Paperbag Added: "+20+"\n";
-            price += 20;
+            this.bill =bill+"Paperbag Added: "+20+"\n";
+//            System.out.println("Paperbag Added: "+20);
+            this.price += 20;
         }
             }
         extrtakeway = true;
     }
 
         public String getBill(){
-        // your code goes here
-        if(GetBill == false) {
-            bill = bill + "Total Price: " + price + "\n";
-            GetBill = true;
+            if (!GetBill) {
+
+//                int price = 20;
+
+                GetBill = true;
+
+                // Return the bill as a string
+                this.bill = bill+"Total Price: " + price;
+//                System.out.println(bill);
+                return bill;
+            }
+
             return bill;
-        }
-        return  null;
 
     }
+
 }
